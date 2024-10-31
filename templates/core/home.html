@@ -1,0 +1,17 @@
+{% extends 'core/core.html' %}
+{% block content %}
+<div class="row">
+  {% for product in products %}
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img src="{{ product.image.url }}" class="card-img-top" alt="..." style="border:2px solid green" width="250" height="300">
+      <div class="card-body" style="margin-top: 10px; width: 22rem;">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">₦{{ product.price }}</p>
+        <a href="{%  url 'core:detail' product.pk %}" class="btn btn-primary">Detail</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

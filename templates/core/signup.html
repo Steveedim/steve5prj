@@ -1,0 +1,12 @@
+{% extends 'core/core.html' %}
+{% block title%}Signup{% endblock title %}
+{% block content %}
+    <h1>Signup</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <button class="btn btn-outline-success" type="submit">Submit</button>
+    </form>
+    <br>
+    <p><small>Already have an account. </small><a href="{% url 'core:login' %}">Login</a></p>
+{% endblock content %}
